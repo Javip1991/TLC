@@ -599,6 +599,7 @@ body {
 .services-section {
   background-color: var(--carbon);
   padding: var(--section-pad);
+  padding-bottom: 40px; /* Reducido para acortar distancia con la siguiente sección */
   color: var(--text-white);
 }
 
@@ -615,6 +616,11 @@ body {
 .service-block+.service-block {
   padding-top: 80px;
   border-top: 1px solid rgba(200, 216, 232, 0.06);
+}
+
+/* Reducir el margen del último bloque para que no se sume al padding de la sección */
+.service-block:last-child {
+  margin-bottom: 0;
 }
 
 /* Bloques alternos */
