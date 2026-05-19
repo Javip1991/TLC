@@ -11,30 +11,30 @@
    ========================================= */
 :root {
   /* Paleta principal */
-  --black: #000000;
-  --carbon: #080808;
-  --graphite: #111111;
-  --graphite-mid: #1a1a1a;
-  --graphite-lt: #222222;
-  --steel: #2a2a2a;
+  --black: #172230;
+  --carbon: #172230;
+  --graphite: #121A24;
+  --graphite-mid: #1A2430;
+  --graphite-lt: #243240;
+  --steel: #324355;
 
-  /* Acento cromado / azul TLC */
-  --chrome: #c8d8e8;
-  --chrome-mid: #8faabf;
-  --blue-accent: #1e6fff;
-  --blue-glow: #3d8fff;
-  --blue-deep: #0a3a7a;
+  /* Acento marino / tecnológico */
+  --chrome: #D6E4EF;
+  --chrome-mid: #9EB6CA;
+  --blue-accent: #008ECC;
+  --blue-glow: #33B8E8;
+  --blue-deep: #005B8F;
 
-  /* Oro / platino para detalles de lujo */
-  --gold: #c9a84c;
-  --gold-lt: #e8c96e;
-  --silver: #b8c5d0;
+  /* Detalles premium */
+  --gold: #C7A85D;
+  --gold-lt: #E6CA88;
+  --silver: #BFC9D4;
 
   /* Texto */
-  --text-white: #ffffff;
-  --text-light: #e8edf2;
-  --text-muted: #8a9ab0;
-  --text-dim: #555f6e;
+  --text-white: #FFFFFF;
+  --text-light: #EEF4F8;
+  --text-muted: #9AAABA;
+  --text-dim: #66758A;
 
   /* Tipografía */
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
@@ -83,7 +83,7 @@ body {
    NAVBAR
    ========================================= */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: #172230;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   height: var(--nav-height);
@@ -599,7 +599,8 @@ body {
 .services-section {
   background-color: var(--carbon);
   padding: var(--section-pad);
-  padding-bottom: 40px; /* Reducido para acortar distancia con la siguiente sección */
+  padding-bottom: 40px;
+  /* Reducido para acortar distancia con la siguiente sección */
   color: var(--text-white);
 }
 
@@ -623,37 +624,21 @@ body {
   margin-bottom: 0;
 }
 
-/* Bloques alternos */
-.service-block:nth-of-type(odd) .service-carousel {
+/* Bloques de servicio: Fotos a la izquierda y textos a la derecha */
+.service-block .service-carousel {
   grid-column: 1;
   grid-row: 1 / 3;
 }
 
-.service-block:nth-of-type(odd) .service-content {
+.service-block .service-content {
   grid-column: 2;
   grid-row: 1;
 }
 
-.service-block:nth-of-type(odd) .btn-outline {
+.service-block .btn-outline {
   grid-column: 2;
   grid-row: 2;
   justify-self: start;
-}
-
-.service-block:nth-of-type(even) .service-content {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.service-block:nth-of-type(even) .btn-outline {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: start;
-}
-
-.service-block:nth-of-type(even) .service-carousel {
-  grid-column: 2;
-  grid-row: 1 / 3;
 }
 
 /* Contenido de texto del servicio */
