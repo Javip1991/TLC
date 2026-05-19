@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         // Solo si no es un toggle de dropdown en móvil (opcional, pero mejor cerrar si es un ancla)
-        if (!link.parentElement.classList.contains('dropdown') || window.innerWidth > 900) {
+        if (!link.parentElement.classList.contains('dropdown') || window.innerWidth > 1024) {
           hamburger.classList.remove('active');
           navMenu.classList.remove('active');
           document.body.style.overflow = 'auto';
@@ -90,9 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dropdown => {
       const link = dropdown.querySelector('a');
       link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-          e.preventDefault(); // Evitar navegación inmediata si hay submenú
-          dropdown.classList.toggle('active');
+        if (window.innerWidth <= 1024) {
+          if (!dropdown.classList.contains('active')) {
+            e.preventDefault();
+            dropdowns.forEach(item => {
+              if (item !== dropdown) item.classList.remove('active');
+            });
+            dropdown.classList.add('active');
+          }
         }
       });
     });
@@ -148,4 +153,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
